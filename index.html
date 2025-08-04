@@ -1,0 +1,83 @@
+<!DOCTYPE html><html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="favicon.jpg" />
+    <title>Murodbek Tuychiyev - Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+    <script>
+      if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            boxShadow: {
+              resume: '0 10px 20px rgba(0, 0, 0, 0.2)',
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 font-sans">
+    <header class="flex items-center justify-between p-4 shadow-md dark:shadow-gray-700">
+      <h1 class="text-xl font-semibold">Murodbek Tuychiyev</h1>
+      <button onclick="toggleMenu()" class="lg:hidden text-2xl">☰</button>
+      <nav id="nav" class="hidden lg:flex gap-6 text-sm">
+        <a href="#cv" class="hover:text-blue-600 dark:hover:text-blue-400">CV</a>
+        <a href="#contact" class="hover:text-blue-600 dark:hover:text-blue-400">Kontakt</a>
+        <button onclick="toggleTheme()" class="ml-4 bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded">🌓</button>
+      </nav>
+    </header><div id="mobileMenu" class="lg:hidden hidden flex-col gap-2 p-4">
+  <a href="#cv" class="block">CV</a>
+  <a href="#contact" class="block">Kontakt</a>
+  <button onclick="toggleTheme()" class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded mt-2">🌓 Kun/Tun</button>
+</div>
+
+<main class="max-w-3xl mx-auto px-4 py-10">
+  <section id="cv" class="text-center">
+    <h2 class="text-2xl font-semibold mb-4">Mening CV</h2>
+    <div class="overflow-hidden inline-block transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-resume">
+      <img src="Resume.png" alt="Mening CV" class="rounded-xl" />
+    </div>
+  </section>
+
+  <section id="contact" class="mt-16">
+    <h2 class="text-2xl font-semibold mb-4 text-center">Kontakt</h2>
+    <div class="grid gap-4 text-center">
+      <p><strong>Email:</strong> murodbektuychiyev83@gmail.com</p>
+      <p><strong>Telegram:</strong> <a href="https://t.me/TMB_2009" target="_blank" class="text-blue-500 hover:underline">@TMB_2009</a></p>
+      <p><strong>GitHub:</strong> <a href="https://github.com/MurodbekTuychiyev" target="_blank" class="text-blue-500 hover:underline">https://github.com/Murodbektuychiyev</a></p>
+    </div>
+  </section>
+</main>
+
+<footer class="text-center p-6 text-sm text-gray-500 dark:text-gray-400">
+  &copy; 2025 Murodbek Tuychiyev. Barcha huquqlar himoyalangan.
+</footer>
+
+<script>
+  function toggleTheme() {
+    const html = document.documentElement;
+    html.classList.toggle('dark');
+    const newTheme = html.classList.contains('dark') ? 'dark' : 'light';
+    localStorage.setItem('theme', newTheme);
+  }
+
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('hidden');
+  }
+</script>
+
+  </body>
+</html>
